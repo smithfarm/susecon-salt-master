@@ -1,6 +1,6 @@
-prefix := /srv/salt
+prefix := /srv/salt/
 
-MY_FILES := \
+INST_FILES := \
     authorized_keys-ceph \
     bashrc \
     ceph-admin.sls \
@@ -12,5 +12,8 @@ MY_FILES := \
     sudoers \
     sysctl.conf
 
-install: $(MY_FILES)
-	install -m 0644 -D $(inputs) $(prefix)
+install:
+	mkdir $(prefix)
+	for f in $(INST_FILES) ; do \
+		install -m 0644 -D $$f $(prefix) ; \
+	done
