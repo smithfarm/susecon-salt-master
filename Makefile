@@ -13,4 +13,4 @@ MY_FILES := \
     sysctl.conf
 
 install: $(MY_FILES)
-    install -m 0644 -D $(inputs) $(prefix)
+	install -m 0644 -D $(inputs) $(prefix)
