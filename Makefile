@@ -13,7 +13,6 @@ INST_FILES := \
     sysctl.conf
 
 install:
-	mkdir $(prefix)
 	for f in $(INST_FILES) ; do \
 		install -m 0644 -D $$f $(prefix) ; \
 	done
