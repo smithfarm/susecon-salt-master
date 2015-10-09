@@ -1,4 +1,4 @@
-prefix := /srv/salt/
+prefix := $(DESTDIR)/srv/salt/
 
 INST_FILES := \
     authorized_keys-ceph \
@@ -13,6 +13,7 @@ INST_FILES := \
     sysctl.conf
 
 install:
+	mkdir -p $(prefix)
 	for f in $(INST_FILES) ; do \
 		install -m 0644 -D $$f $(prefix) ; \
 	done
