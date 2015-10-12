@@ -12,6 +12,7 @@ INST_FILES := \
     sudoers \
     sysctl.conf
 
+.PHONY: install
 install:
 	mkdir -p $(prefix)
 	for f in $(INST_FILES) ; do \
