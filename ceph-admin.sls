@@ -15,6 +15,14 @@ ceph:
     - mode: 644
     - template: jinja
 
+/root/.bashrc:
+  file.managed:
+    - source: salt://bashrc
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+
 /etc/sudoers:
   file.managed:
     - source: salt://sudoers
