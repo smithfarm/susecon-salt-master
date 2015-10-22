@@ -4,8 +4,8 @@ INST_FILES := \
     authorized_keys-ceph \
     bashrc \
     ceph-admin.sls \
-    ceph-mon.sls \
     etc-hosts \
+    etc-motd \
     id_rsa \
     id_rsa.pub \
     ssh-no-interactive.sh \
