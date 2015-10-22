@@ -36,6 +36,7 @@ ceph:
     - user: root
     - group: root
     - mode: 644
+    - template: jinja
 
 /home/ceph/.ssh:
   file.directory:
