@@ -4,6 +4,7 @@ INST_FILES := \
     authorized_keys-ceph \
     bashrc \
     ceph-admin.sls \
+    ceph-deploy.sh \
     etc-hosts \
     etc-motd \
     id_rsa \

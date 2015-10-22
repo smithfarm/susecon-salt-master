@@ -15,6 +15,13 @@ ceph:
     - mode: 644
     - template: jinja
 
+/home/ceph/ceph-deploy.sh:
+  file.managed:
+    - source: salt://ceph-deploy.sh
+    - user: ceph
+    - group: users
+    - mode: 755
+
 /root/.bashrc:
   file.managed:
     - source: salt://bashrc
