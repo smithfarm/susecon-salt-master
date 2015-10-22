@@ -30,6 +30,13 @@ ceph:
     - group: root
     - mode: 440
 
+/etc/motd:
+  file.managed:
+    - source: salt://etc-motd
+    - user: root
+    - group: root
+    - mode: 644
+
 /home/ceph/.ssh:
   file.directory:
     - user: ceph
