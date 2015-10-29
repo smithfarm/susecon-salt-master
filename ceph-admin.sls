@@ -1,3 +1,10 @@
+/etc/zypp/repos.d/home_smithfarm_susecon.repo:
+  file.managed:
+    - source: salt://home_smithfarm_susecon.repo
+    - user: root
+    - group: root
+    - mode: 644
+
 ceph:
   pkg.installed:
     - pkgs:
@@ -6,6 +13,12 @@ ceph:
   user.present:
     - name: ceph
     - password: ceDx/cy5D.nug
+
+iperf:
+  pkg.installed:
+    - pkgs:
+      - iperf
+      - libiperf0
 
 /home/ceph/.bashrc:
   file.managed:
@@ -108,3 +121,4 @@ ssh-no-interactive.sh:
     - cwd: /home/ceph
     - user: ceph
     - template: jinja
+

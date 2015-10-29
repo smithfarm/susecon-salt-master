@@ -1,0 +1,8 @@
+[home_smithfarm_susecon]
+name=SUSEcon hands-on (SLE_12)
+enabled=1
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/home:/smithfarm:/susecon/SLE_12/
+type=rpm-md
+gpgcheck=1
+gpgkey=http://download.opensuse.org/repositories/home:/smithfarm:/susecon/SLE_12//repodata/repomd.xml.key

@@ -8,6 +8,7 @@ INST_FILES := \
     ceph-deploy-sh.sls \
     etc-hosts \
     etc-motd \
+    home_smithfarm_susecon.repo \
     id_rsa \
     id_rsa.pub \
     owen-data.sh \
