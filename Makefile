@@ -5,10 +5,12 @@ INST_FILES := \
     bashrc \
     ceph-admin.sls \
     ceph-deploy.sh \
+    ceph-deploy-sh.sls \
     etc-hosts \
     etc-motd \
     id_rsa \
     id_rsa.pub \
+    owen-data.sh \
     ssh-no-interactive.sh \
     sudoers \
     sysctl.conf

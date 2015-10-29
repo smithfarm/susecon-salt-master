@@ -30,6 +30,13 @@ ceph:
     - mode: 644
     - template: jinja
 
+/root/owen-data.sh:
+  file.managed:
+    - source: salt://owen-data.sh
+    - user: root
+    - group: root
+    - mode: 644
+
 /etc/sudoers:
   file.managed:
     - source: salt://sudoers
@@ -101,4 +108,3 @@ ssh-no-interactive.sh:
     - cwd: /home/ceph
     - user: ceph
     - template: jinja
-
