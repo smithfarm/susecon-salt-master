@@ -35,7 +35,7 @@ ceph:
     - source: salt://owen-data.sh
     - user: root
     - group: root
-    - mode: 644
+    - mode: 755
 
 /etc/sudoers:
   file.managed:
