@@ -14,12 +14,6 @@ ceph:
     - name: ceph
     - password: ceDx/cy5D.nug
 
-iperf:
-  pkg.installed:
-    - pkgs:
-      - iperf
-      - libiperf0
-
 /home/ceph/.bashrc:
   file.managed:
     - source: salt://bashrc
