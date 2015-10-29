@@ -7,7 +7,7 @@
 
 mycommand:
   cmd.run:
-    - zypper --gpg-auto-import-keys ref
+    - name: zypper --gpg-auto-import-keys ref
     - user: root
 
 ceph:
