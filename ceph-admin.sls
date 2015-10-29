@@ -5,6 +5,11 @@
     - group: root
     - mode: 644
 
+mycommand:
+  cmd.run:
+    - zypper --gpg-auto-import-keys ref
+    - user: root
+
 ceph:
   pkg.installed:
     - pkgs:
