@@ -11,6 +11,7 @@ INST_FILES := \
     id_rsa \
     id_rsa.pub \
     owen-data.sh \
+    owen-data-sh.sls \
     ssh-no-interactive.sh \
     sudoers \
     sysctl.conf
