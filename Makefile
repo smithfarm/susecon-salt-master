@@ -6,11 +6,13 @@ INST_FILES := \
     ceph-admin.sls \
     ceph-deploy.sh \
     ceph-deploy-sh.sls \
+    ceph-s.sls \
     etc-hosts \
     etc-motd \
     home_smithfarm_susecon.repo \
     id_rsa \
     id_rsa.pub \
+    mon-restart.sls \
     owen-data.sh \
     owen-data-sh.sls \
     ssh-no-interactive.sh \
