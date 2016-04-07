@@ -1,15 +1,3 @@
-/etc/zypp/repos.d/home_smithfarm_susecon.repo:
-  file.managed:
-    - source: salt://home_smithfarm_susecon.repo
-    - user: root
-    - group: root
-    - mode: 644
-
-mycommand:
-  cmd.run:
-    - name: zypper --gpg-auto-import-keys ref
-    - user: root
-
 ceph:
   pkg.installed:
     - pkgs:
@@ -27,6 +15,13 @@ ceph:
     - mode: 644
     - template: jinja
 
+/root/owen-data.sh:
+  file.managed:
+    - source: salt://owen-data.sh
+    - user: root
+    - group: root
+    - mode: 755
+
 /home/ceph/ceph-deploy.sh:
   file.managed:
     - source: salt://ceph-deploy.sh
@@ -41,13 +36,6 @@ ceph:
     - group: root
     - mode: 644
     - template: jinja
-
-/root/owen-data.sh:
-  file.managed:
-    - source: salt://owen-data.sh
-    - user: root
-    - group: root
-    - mode: 755
 
 /etc/sudoers:
   file.managed:

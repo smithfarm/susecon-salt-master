@@ -7,9 +7,7 @@ INST_FILES := \
     ceph-deploy.sh \
     ceph-deploy-sh.sls \
     ceph-s.sls \
-    etc-hosts \
     etc-motd \
-    home_smithfarm_susecon.repo \
     id_rsa \
     id_rsa.pub \
     mon-restart.sls \
