@@ -74,7 +74,7 @@ mycommand3:
 
 /home/cephadm/.ssh/authorized_keys:
   file.managed:
-    - source: salt://authorized_keys-ceph
+    - source: salt://id_rsa.pub
     - user: cephadm
     - group: users
     - mode: 600
