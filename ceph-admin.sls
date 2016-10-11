@@ -1,11 +1,9 @@
-/etc/zypp/repos.d/home_smithfarm_susecon.repo:
-  file.managed:
-    - source: salt://home_smithfarm_susecon.repo
+mycommand1:
+  cmd.run:
+    - name: zypper --non-interactive addrepo http://download.opensuse.org/repositories/network:utilities/SLE_12_SP1/network:utilities.repo
     - user: root
-    - group: root
-    - mode: 644
 
-mycommand:
+mycommand2:
   cmd.run:
     - name: zypper --gpg-auto-import-keys ref
     - user: root
@@ -13,24 +11,35 @@ mycommand:
 ceph:
   pkg.installed:
     - pkgs:
-      - ceph
       - ceph-deploy
   user.present:
-    - name: ceph
+    - name: cephadm
     - password: ceDx/cy5D.nug
 
-/home/ceph/.bashrc:
+mycommand3:
+  cmd.run:
+    - name: zypper --no-gpg-checks --non-interactive install ceph
+    - user: root
+
+/home/cephadm/.bashrc:
   file.managed:
     - source: salt://bashrc
-    - user: ceph
+    - user: cephadm
     - group: users
     - mode: 644
     - template: jinja
 
-/home/ceph/ceph-deploy.sh:
+/root/owen-data.sh:
+  file.managed:
+    - source: salt://owen-data.sh
+    - user: root
+    - group: root
+    - mode: 755
+
+/home/cephadm/ceph-deploy.sh:
   file.managed:
     - source: salt://ceph-deploy.sh
-    - user: ceph
+    - user: cephadm
     - group: users
     - mode: 755
 
@@ -41,13 +50,6 @@ ceph:
     - group: root
     - mode: 644
     - template: jinja
-
-/root/owen-data.sh:
-  file.managed:
-    - source: salt://owen-data.sh
-    - user: root
-    - group: root
-    - mode: 755
 
 /etc/sudoers:
   file.managed:
@@ -64,30 +66,36 @@ ceph:
     - mode: 644
     - template: jinja
 
-/home/ceph/.ssh:
+/home/cephadm/.ssh:
   file.directory:
-    - user: ceph
+    - user: cephadm
     - group: users
     - dir_mode: 700
 
-/home/ceph/.ssh/authorized_keys:
+/home/cephadm/.ssh/authorized_keys:
   file.managed:
     - source: salt://authorized_keys-ceph
-    - user: ceph
+    - user: cephadm
     - group: users
     - mode: 600
 
-/home/ceph/.ssh/id_rsa:
+/home/cephadm/.ssh/known_hosts:
+  file.managed:
+    - user: cephadm
+    - group: users
+    - mode: 600
+
+/home/cephadm/.ssh/id_rsa:
   file.managed:
     - source: salt://id_rsa
-    - user: ceph
+    - user: cephadm
     - group: users
     - mode: 600
 
-/home/ceph/.ssh/id_rsa.pub:
+/home/cephadm/.ssh/id_rsa.pub:
   file.managed:
     - source: salt://id_rsa.pub
-    - user: ceph
+    - user: cephadm
     - group: users
     - mode: 644
 
@@ -117,7 +125,7 @@ ntpd:
 ssh-no-interactive.sh:
   cmd.script:
     - source: salt://ssh-no-interactive.sh
-    - cwd: /home/ceph
-    - user: ceph
+    - cwd: /home/cephadm
+    - user: cephadm
     - template: jinja
 
