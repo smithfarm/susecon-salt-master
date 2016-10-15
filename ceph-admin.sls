@@ -163,14 +163,14 @@ ntpd:
     - group: root
     - dir_mode: 755
 
-ssh-no-interactive.sh:
+ssh-no-interactive.sh-cephadm:
   cmd.script:
     - source: salt://ssh-no-interactive.sh
     - cwd: /home/cephadm
     - user: cephadm
     - template: jinja
 
-ssh-no-interactive.sh:
+ssh-no-interactive.sh-ec2-user:
   cmd.script:
     - source: salt://ssh-no-interactive.sh
     - cwd: /home/ec2-user
