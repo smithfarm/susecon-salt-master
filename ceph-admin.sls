@@ -161,3 +161,10 @@ ssh-no-interactive.sh-cephadm:
     - user: cephadm
     - template: jinja
 
+ssh-no-interactive.sh-ec2-user:
+  cmd.script:
+    - source: salt://ssh-no-interactive.sh
+    - cwd: /home/ec2-user
+    - user: ec2-user
+    - template: jinja
+
