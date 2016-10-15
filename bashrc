@@ -6,4 +6,3 @@ export node2=ip-10-0-{{ grains['delegate'] }}-12
 export performance=ip-10-0-{{ grains['delegate'] }}-12
 export node3=ip-10-0-{{ grains['delegate'] }}-13
 export node4=ip-10-0-{{ grains['delegate'] }}-14
-alias ceph='ceph -k ceph.client.admin.keyring'

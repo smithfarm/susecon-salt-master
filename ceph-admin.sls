@@ -29,6 +29,14 @@ mycommand3:
     - mode: 644
     - template: jinja
 
+/home/ec2-user/.bashrc:
+  file.managed:
+    - source: salt://bashrc
+    - user: ec2-user
+    - group: users
+    - mode: 644
+    - template: jinja
+
 /root/owen-data.sh:
   file.managed:
     - source: salt://owen-data.sh
@@ -72,6 +80,12 @@ mycommand3:
     - group: users
     - dir_mode: 700
 
+/home/ec2-user/.ssh:
+  file.directory:
+    - user: ec2-user
+    - group: users
+    - dir_mode: 700
+
 /home/cephadm/.ssh/authorized_keys:
   file.managed:
     - source: salt://id_rsa.pub
@@ -79,9 +93,22 @@ mycommand3:
     - group: users
     - mode: 600
 
+/home/ec2-user/.ssh/authorized_keys:
+  file.managed:
+    - source: salt://id_rsa.pub
+    - user: ec2-user
+    - group: users
+    - mode: 600
+
 /home/cephadm/.ssh/known_hosts:
   file.managed:
     - user: cephadm
+    - group: users
+    - mode: 600
+
+/home/ec2-user/.ssh/known_hosts:
+  file.managed:
+    - user: ec2-user
     - group: users
     - mode: 600
 
@@ -92,10 +119,24 @@ mycommand3:
     - group: users
     - mode: 600
 
+/home/ec2-user/.ssh/id_rsa:
+  file.managed:
+    - source: salt://id_rsa
+    - user: ec2-user
+    - group: users
+    - mode: 600
+
 /home/cephadm/.ssh/id_rsa.pub:
   file.managed:
     - source: salt://id_rsa.pub
     - user: cephadm
+    - group: users
+    - mode: 644
+
+/home/ec2-user/.ssh/id_rsa.pub:
+  file.managed:
+    - source: salt://id_rsa.pub
+    - user: ec2-user
     - group: users
     - mode: 644
 
@@ -127,5 +168,12 @@ ssh-no-interactive.sh:
     - source: salt://ssh-no-interactive.sh
     - cwd: /home/cephadm
     - user: cephadm
+    - template: jinja
+
+ssh-no-interactive.sh:
+  cmd.script:
+    - source: salt://ssh-no-interactive.sh
+    - cwd: /home/ec2-user
+    - user: ec2-user
     - template: jinja
 
