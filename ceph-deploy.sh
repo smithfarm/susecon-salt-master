@@ -12,3 +12,4 @@ ceph-deploy osd prepare $node1:xvdb
 ceph-deploy osd prepare $node2:xvdb
 ceph-deploy osd prepare $node3:xvdb
 ceph-deploy osd prepare $node4:xvdb
+ceph-deploy admin $ADMIN
