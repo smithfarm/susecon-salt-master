@@ -80,12 +80,6 @@ mycommand3:
     - group: users
     - dir_mode: 700
 
-/home/ec2-user/.ssh:
-  file.directory:
-    - user: ec2-user
-    - group: users
-    - dir_mode: 700
-
 /home/cephadm/.ssh/authorized_keys:
   file.managed:
     - source: salt://id_rsa.pub
