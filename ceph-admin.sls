@@ -94,11 +94,8 @@ mycommand3:
     - mode: 600
 
 /home/ec2-user/.ssh/authorized_keys:
-  file.managed:
+  file.append:
     - source: salt://id_rsa.pub
-    - user: ec2-user
-    - group: users
-    - mode: 600
 
 /home/cephadm/.ssh/known_hosts:
   file.managed:
@@ -168,12 +165,5 @@ ssh-no-interactive.sh-cephadm:
     - source: salt://ssh-no-interactive.sh
     - cwd: /home/cephadm
     - user: cephadm
-    - template: jinja
-
-ssh-no-interactive.sh-ec2-user:
-  cmd.script:
-    - source: salt://ssh-no-interactive.sh
-    - cwd: /home/ec2-user
-    - user: ec2-user
     - template: jinja
 
