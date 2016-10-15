@@ -1,4 +1,4 @@
 mycommand:
   cmd.run:
-    - name: ./owen-data.sh
+    - name: ./resiliency-data.sh
     - user: root
