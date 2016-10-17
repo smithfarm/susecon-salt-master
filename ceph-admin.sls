@@ -37,9 +37,9 @@ mycommand3:
     - mode: 644
     - template: jinja
 
-/root/owen-data.sh:
+/root/resiliency-data.sh:
   file.managed:
-    - source: salt://owen-data.sh
+    - source: salt://resiliency-data.sh
     - user: root
     - group: root
     - mode: 755
