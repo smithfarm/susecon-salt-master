@@ -138,6 +138,13 @@ mycommand3:
     - group: root
     - mode: 644
 
+/etc/ntp.conf:
+  file.managed:
+    - source: salt://ntp.conf
+    - user: root
+    - group: root
+    - mode: 644
+
 ntpd:
   service.running:
     - enable: True
