@@ -1,3 +1,3 @@
 #!/bin/bash
 cd DeepSea/qa
-./health-ok.sh
+suites/basic/health-ok.sh --cli
