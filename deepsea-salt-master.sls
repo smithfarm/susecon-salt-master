@@ -10,17 +10,17 @@ salt-master-install:
 deepsea-install:
   cmd.script:
     - name: salt://deepsea-install.sh
-    - cwd: /root
-    - user: root
+    - cwd: /home/cephadm
+    - user: cephadm
 
 restart-salt-master:
   cmd.run:
     - name: systemctl start salt-master.service
     - user: root
 
-/root/bin/health-ok:
+/home/cephadm/bin/health-ok:
   file.managed:
     - source: salt://health-ok.sh
-    - user: root
-    - group: root
+    - user: cephadm
+    - group: cephadm
     - mode: 755
