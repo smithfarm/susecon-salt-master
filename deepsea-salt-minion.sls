@@ -16,6 +16,6 @@ switch-master:
 
 mycommand2:
   cmd.run:
-    - name: systemctl start salt-master.service
+    - name: systemctl restart salt-minion.service
     - user: root
 
