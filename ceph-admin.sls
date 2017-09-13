@@ -1,25 +1,15 @@
-mycommand1:
-  cmd.run:
-    - name: zypper --non-interactive addrepo http://download.opensuse.org/repositories/network:utilities/SLE_12_SP1/network:utilities.repo
-    - user: root
-
 mycommand2:
   cmd.run:
     - name: zypper --gpg-auto-import-keys ref
     - user: root
 
-ceph:
+salt:
   pkg.installed:
     - pkgs:
-      - ceph-deploy
+      - salt-minion
   user.present:
     - name: cephadm
     - password: ceDx/cy5D.nug
-
-mycommand3:
-  cmd.run:
-    - name: zypper --no-gpg-checks --non-interactive install ceph
-    - user: root
 
 /home/cephadm/.bashrc:
   file.managed:
@@ -42,13 +32,6 @@ mycommand3:
     - source: salt://resiliency-data.sh
     - user: root
     - group: root
-    - mode: 755
-
-/home/cephadm/ceph-deploy.sh:
-  file.managed:
-    - source: salt://ceph-deploy.sh
-    - user: cephadm
-    - group: users
     - mode: 755
 
 /root/.bashrc:
@@ -148,18 +131,6 @@ mycommand3:
 ntpd:
   service.running:
     - enable: True
-
-/srv:
-  file.directory:
-    - user: root
-    - group: root
-    - dir_mode: 755
-
-/srv/osd:
-  file.directory:
-    - user: root
-    - group: root
-    - dir_mode: 755
 
 ssh-no-interactive.sh-cephadm:
   cmd.script:
