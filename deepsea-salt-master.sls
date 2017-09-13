@@ -7,6 +7,12 @@ salt:
     - pkgs:
       - salt-master
 
+mycommand1:
+  cmd.script:
+    - name: salt://deepsea-install.sh
+    - cwd: /etc
+    - user: root
+
 mycommand2:
   cmd.run:
     - name: systemctl start salt-master.service
