@@ -1,3 +1,4 @@
 #!/bin/bash
+sudo salt-key -Ay
 cd DeepSea/qa
-suites/basic/health-ok.sh --cli
+sudo suites/basic/health-ok.sh --cli
