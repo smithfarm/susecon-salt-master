@@ -1,3 +1,7 @@
+# bootstrap.sls
+#
+# apply this state on all delegate minions (i.e. all delegate instances)
+
 mycommand2:
   cmd.run:
     - name: zypper --gpg-auto-import-keys ref
