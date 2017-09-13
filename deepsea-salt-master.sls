@@ -22,5 +22,5 @@ restart-salt-master:
   file.managed:
     - source: salt://health-ok.sh
     - user: cephadm
-    - group: cephadm
+    - group: users
     - mode: 755
