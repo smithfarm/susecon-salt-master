@@ -8,6 +8,12 @@ salt:
     - pkgs:
       - salt-minion
 
+switch-master:
+  cmd.script:
+    - name: salt://switch-master.sh
+    - cwd: /etc
+    - user: root
+
 mycommand2:
   cmd.run:
     - name: systemctl start salt-master.service
