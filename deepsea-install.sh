@@ -14,7 +14,7 @@ sudo zypper --non-interactive --no-gpg-checks removerepo devel_languages_python
 #--- can be dropped once python-click reaches SES5 channel
 #---------------------------------------------------------
 
-sudo zypper --non-interactive --no-gpg-checks install --no-recommends make rpm
+sudo zypper --non-interactive --no-gpg-checks install --no-recommends make rpm git-core
 test -d DeepSea || git clone --depth 1 --branch susecon2017 https://github.com/smithfarm/DeepSea.git
 cd DeepSea
 ls -l
