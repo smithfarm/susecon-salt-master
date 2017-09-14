@@ -7,6 +7,7 @@ salt:
   pkg.installed:
     - pkgs:
       - salt-minion
+      - cron
 
 switch-master:
   cmd.script:
